@@ -19,12 +19,12 @@
 			height: 100%;
 		}
 		#color-palette {
-			width: 300px;
 			background-color: #f1f1f1;
 			display: flex;
 			flex-wrap: wrap;
 			position: relative;
 			top: 0;
+			width: 80%;
 		}
 
 		.swatch {
@@ -95,6 +95,8 @@
 			height: 80px;
 			width: 80px;
 			border-radius: 11px;
+			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+			display: flex;
 		}
 		.roundbutton {
 			background-color: white;
@@ -108,7 +110,6 @@
 			flex-direction: row;
 			width: 180px;
 			justify-content: space-between;
-			margin-bottom: 40px;
 		}
 		#bottombuttons {
 			display: flex;
@@ -126,27 +127,86 @@
 			display: flex;
 			flex-direction: column;
 		}
+		#undobutton img {
+			width: 61%;
+			margin: 0 auto;
+		}
 		#redobutton {
 			box-shadow: inset 0 3px 10px rgb(0 0 0 / 0.4);
 			display: flex;
 			flex-direction: column;
-		}
-		#clearbutton {
-			background-color: red;
-		}
-		.buttontext {
-			font-family: 'Pragati Narrow', sans-serif;
-			margin: auto;
-		}
-		#undobutton img {
-			width: 61%;
-			margin: 0 auto;
 		}
 		#redobutton img {
 			width: 61%;
 			margin: 0 auto;
 			opacity: 0.2;
 		}
+		#backbutton {
+			display:flex;
+		}
+		#backbutton img {
+			width: 71%;
+			height: 71%;
+			margin: auto;
+		}
+		#clearbutton {
+			background-color: red;
+			display: flex;
+		}
+		#clearbutton h2 {
+			font-family: 'Pragati Narrow', sans-serif;
+			font-weight: 700;
+			margin: auto;
+			color: white;
+		}
+		.buttontext {
+			font-family: 'Pragati Narrow', sans-serif;
+			margin: -7px auto;
+		}
+		#savebutton {
+			display: flex;
+		}
+		#savebutton img {
+			width: 71%;
+			height: 71%;
+			margin: auto;
+		}
+		#sharebutton {
+			display: flex;
+		}
+		#sharebutton img {
+			width: 71%;
+			height: 71%;
+			margin: auto;
+		}
+		#palettetools {
+			display: flex;
+			flex-direction: row;
+			height: 50%;
+			justify-content: space-between;
+		}
+		#tools {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		#tools img {
+			width: 60%;
+			height: 60%;
+			margin: auto;
+		}
+		#fill {
+			box-shadow: inset 0 3px 10px rgb(0 0 0 / 0.4);
+			background-color: rgb(73 29 200 / 0.2);
+			border: 2px solid rgb(73 29 200 / 0.4);
+		}
+		#fill img {
+			opacity: 0.4;
+		}
+
+
+
 
 	</style>
 
@@ -243,21 +303,43 @@
 					<div id="undoredo">
 						<div id="undobutton" class="squarebutton">
 							<img src='/static/coloring/images/undoicon.png'>
-							<h3 class="buttontext">Undo</h3>
+							<h2 class="buttontext">Undo</h2>
 						</div>
 						<div id="redobutton" class="squarebutton">
 							<img src='/static/coloring/images/redoicon.png'>
-							<h3 class="buttontext" style="opacity:0.2">Redo</h3>
+							<h2 class="buttontext" style="opacity:0.2">Redo</h2>
 						</div>
 					</div>
-						<div id="backbutton" class="roundbutton"></div>
+						<div id="backbutton" class="roundbutton">
+							<img src='/static/coloring/images/backicon.png'>
+						</div>
 				</div>
-				<div id="color-palette"></div>
+				<div id="palettetools">
+					<div id="tools">
+						<div id= "brush" class="squarebutton">
+							<img src='/static/coloring/images/brushicon.png'>
+						</div>
+						<div id="fill" class="squarebutton">
+							<img src='/static/coloring/images/fillicon.png'>
+						</div>
+						<div id="eraser" class="squarebutton">
+							<img src='/static/coloring/images/erasericon.png'>
+						</div>
+					</div>
+					<div id="color-palette"></div>
+				</div>
+
 				<div id="bottombuttons">
-					<div id="clearbutton" class="roundbutton"></div>
+					<div id="clearbutton" class="roundbutton">
+						<h2>CLEAR</h2>
+					</div>
 					<div id="saveshare">
-						<div id="savebutton" class="roundbutton"></div>
-						<div id="sharebutton" class="roundbutton"></div>
+						<div id="savebutton" class="roundbutton">
+							<img src='/static/coloring/images/saveicon.png'>
+						</div>
+						<div id="sharebutton" class="roundbutton">
+							<img src='/static/coloring/images/shareicon.png'>
+						</div>
 					</div>
 				</div>
 			</div>
