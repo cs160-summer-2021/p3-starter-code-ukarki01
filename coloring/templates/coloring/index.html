@@ -79,7 +79,47 @@
 		}
 		.palettebuttons {
 			width: 100%;
+			margin-left: 3%;
+			justify-content: space-between;
+			display: flex;
+			flex-direction: column;
 		}
+		#topbuttons {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		.squarebutton {
+			background-color: white;
+			height: 60px;
+			width: 60px;
+			border-radius: 11px;
+		}
+		.roundbutton {
+			background-color: white;
+			height: 60px;
+			width: 60px;
+			border-radius: 30px;
+		}
+		#undoredo {
+			display: flex;
+			flex-direction: row;
+			width: 140px;
+			justify-content: space-between;
+			margin-bottom: 40px;
+		}
+		#bottombuttons {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		#saveshare {
+			display: flex;
+			flex-direction: row;
+			width: 140px;
+			justify-content: space-between;
+		}
+
 	</style>
 
 	<script type="text/javascript" canvas="canvas">
@@ -172,9 +212,20 @@
 			<canvas id="myCanvas" width="750px" height="750px"></canvas>
 			<div class="palettebuttons">
 				<div id="topbuttons">
-					
+					<div id="undoredo">
+						<div class="squarebutton"></div>
+						<div class="squarebutton"></div>
+					</div>
+						<div class="roundbutton"></div>
 				</div>
 				<div id="color-palette"></div>
+				<div id="bottombuttons">
+					<div class="roundbutton"></div>
+					<div id="saveshare">
+						<div class="roundbutton"></div>
+						<div class="roundbutton"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
