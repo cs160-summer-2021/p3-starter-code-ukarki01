@@ -45,7 +45,7 @@
 			var mandala = {
 				item: null,
 				lastClicked: null,
-				filePath: '/static/coloring/images/mandala-freepik.svg'
+				filePath: '/static/coloring/images/triangles.svg'
 			};
 
 			// color palette
@@ -100,7 +100,7 @@
 				getColorsCreatePalette();
 
 				paper.project.importSVG(mandala.filePath, function(item) {
-					mandala.item = item._children["design-freepik"];
+					mandala.item = item._children["design-triangles"];
 				    paper.project.insertLayer(0,mandala.item);
 
 				    if (custom) {
