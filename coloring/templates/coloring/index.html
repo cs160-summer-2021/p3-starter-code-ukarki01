@@ -9,13 +9,21 @@
 	<script type="text/javascript" src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'coloring/vendors/paper/paper-full.min.js' %}"></script>
 
+	<!-- fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Pragati+Narrow:wght@400;700&display=swap" rel="stylesheet">
+
 	<style type="text/css">
+		html {
+			height: 100%;
+		}
 		#color-palette {
 			width: 300px;
 			background-color: #f1f1f1;
 			display: flex;
 			flex-wrap: wrap;
-			position: absolute;
+			position: relative;
 			top: 0;
 		}
 
@@ -31,9 +39,46 @@
 		#myCanvas {
 			padding-left: 0;
 		    padding-right: 0;
-		    margin-left: auto;
-		    margin-right: auto;
 		    display: block;
+				width: 100%;
+
+		}
+		body {
+			background-color: #EAE5F7;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
+		.top {
+			width: 100%;
+			height: 70px;
+			background-color: #491DC8;
+			display: flex;
+		}
+		#logo {
+			width: 50px;
+			margin: auto 10px;
+		}
+		#webname {
+			font-family: 'Pragati Narrow', sans-serif;
+			font-weight: 700;
+			color: white;
+			margin: auto 0;
+		}
+		.bottom {
+			display: flex;
+			align-items: center;
+			height: 100%;
+		}
+		.box {
+			display: flex;
+			width: 95%;
+			margin: auto;
+			height: 88%;
+		}
+		.palettebuttons {
+			width: 100%;
 		}
 	</style>
 
@@ -118,8 +163,20 @@
 	</script>
 </head>
 <body>
-
-	<canvas id="myCanvas" width="750px" height="750px"></canvas>
-	<div id="color-palette"></div>
+	<div class='top'>
+		<img id= "logo" src='/static/coloring/images/ezcolor_logo.png'>
+		<h1 id= "webname">ez color</h1>
+	</div>
+	<div class='bottom'>
+		<div class='box'>
+			<canvas id="myCanvas" width="750px" height="750px"></canvas>
+			<div class="palettebuttons">
+				<div id="topbuttons">
+					
+				</div>
+				<div id="color-palette"></div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
