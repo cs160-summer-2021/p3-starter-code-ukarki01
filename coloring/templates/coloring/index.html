@@ -220,19 +220,11 @@
 			opacity: 0.4;
 		}
 
-
-
-
-
 	</style>
+
 
 	<script type="text/javascript" canvas="canvas">
 
-		$(document).ready(function() {
-			$('a.squarebutton').click(function() {
-				$('a.squarebutton').toggleClass("down");
-			});
-		});
 
 		window.onload = function() {
 			var canvas = document.getElementById('myCanvas');
@@ -291,6 +283,7 @@
 				});
 			}
 
+
 			function init(custom){
 				paper.setup(canvas);
 				getColorsCreatePalette();
@@ -304,13 +297,18 @@
 				    } else {
 				    	myGradientInteraction();
 				    }
-
 				});
 			}
 
 			// Set up the mandala interactivity.
 			init(true);
 		}
+
+		$(document).ready(function() {
+			$('a.squarebutton').click(function() {
+				$('a.squarebutton').toggleClass("down");
+			});
+		});
 
 	</script>
 
@@ -345,14 +343,15 @@
 						<div id= "brush" class="squarebutton">
 							<img src='/static/coloring/images/brushicon.png'>
 						</div>
-						<a id="fill" class="squarebutton down">
+						<div id="fill" class="squarebutton down">
 							<img src='/static/coloring/images/fillicon.png'>
-						</a>
-						<a id="eraser" class="squarebutton">
+						</div>
+						<div id="eraser" class="squarebutton">
 							<img src='/static/coloring/images/erasericon.png'>
-						</a>
+						</div>
 					</div>
-					<div id="color-palette"></div>
+					<div id="color-palette">
+					</div>
 				</div>
 
 				<div id="bottombuttons">
