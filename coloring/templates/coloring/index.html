@@ -40,7 +40,7 @@
 			padding-left: 0;
 		    padding-right: 0;
 		    display: block;
-				width: 100%;
+			width: 100%;
 
 		}
 		body {
@@ -208,20 +208,6 @@
 		#fill img {
 			opacity: 0.4;
 		}
-<<<<<<< HEAD
-		#eraser {
-			box-shadow: inset 0 3px 10px rgb(0 0 0 / 0.4);
-			background-color: rgb(73 29 200 / 0.2);
-			border: 2px solid rgb(73 29 200 / 0.4);
-
-		}
-
-		#eraser img {
-			opacity: 0.4;
-		}
-
-		
-=======
 		*/
 
 		a.down {
@@ -234,7 +220,6 @@
 			opacity: 0.4;
 		}
 
->>>>>>> cdf005b9486f819298db30da3d3e4f66c49d881d
 
 
 
@@ -294,6 +279,8 @@
 				}
 			}
 
+
+
 			// loads a set of colors from a json to create a color palette
 			function getColorsCreatePalette(){
 				cp.$container.html(" ");
@@ -305,6 +292,23 @@
 					createColorPalette(cp.options);
 				});
 			}
+
+			function myEraserInteraction() {
+				var tool = new paper.Tool();
+
+				tool.onMouseDown = function (event) {
+				    var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
+				    if (hit) {
+				    		// Color pallette keeps track of the full history of colors, though we
+				    		// only color in with the most-recent color.
+				        hit.item.fillColor = '#FFFFFF';
+				    }
+				}
+			}
+
+			// if ($("#eraser").hasClass('down')) {
+			// 	myEraserInteraction();
+			// }
 
 			function init(custom){
 				paper.setup(canvas);
@@ -319,22 +323,46 @@
 				    } else {
 				    	myGradientInteraction();
 				    }
+					myEraserInteraction();
+
 
 				});
 			}
 
-			// $('#eraser').on('click', function(event){
-			// 	var tool = new paper.Tool();
+			function ourinit(custom){
+				paper.setup(canvas);
+				
 
-			// 	tool.onMouseDown = function (event) {
-			// 	    var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
-			// 	    if (hit) {
-			// 	    		// Color pallette keeps track of the full history of colors, though we
-			// 	    		// only color in with the most-recent color.
-			// 	        hit.item.fillColor = 'white';
-			// 	    }
-			// 	}
-			// });
+				paper.project.importSVG(mandala.filePath, function(item) {
+					mandala.item = item._children["design-triangles"];
+				    paper.project.insertLayer(0,mandala.item);
+
+				    if (custom) {
+				    	myCustomInteraction();
+				    } else {
+				    	myGradientInteraction();
+				    }
+					myEraserInteraction();
+
+
+				});
+			}
+
+			$("#clearbutton").click(function() {
+				ourinit(true);
+			});
+
+			$("#eraser").click(function() {
+				console.log("Haellooooooooooooo");
+				$("#eraser").css('background-color','red');
+				cp.history.push('#FFFFFF');
+				myCustomInteraction();
+
+			});
+
+
+
+		
 
 			
 
@@ -378,9 +406,10 @@
 						<a id="fill" class="squarebutton down">
 							<img src='/static/coloring/images/fillicon.png'>
 						</a>
-						<a id="eraser" class="squarebutton">
+						<div id="eraser" class="squarebutton">
 							<img src='/static/coloring/images/erasericon.png'>
-						</a>
+							
+						</div>
 					</div>
 					<div id="color-palette"></div>
 				</div>
