@@ -24,8 +24,34 @@
 			flex-wrap: wrap;
 			position: relative;
 			top: 0;
+			/*width: 80%;*/
+		}
+		#addarea {
+			height: 100%;
+			background-color: #f1f1f1;
+			display: flex;
+		}
+		#paletteandadd {
+			display: flex;
+			flex-direction: column;
 			width: 80%;
 		}
+		#addbutton {
+			margin-left: auto;
+			height: 54px;
+			width: 54px;
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+		#confirmbutton {
+			margin-left: 18px;
+			margin-right: 18px;
+			height: 54px;
+			width: 54px;
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+
 
 		.swatch {
 			width: 24px;
@@ -220,6 +246,21 @@
 			opacity: 0.4;
 		}
 
+		.swatch {
+			width: 54px;
+			height: 54px;
+			border-radius: 30px;
+			margin: 5px;
+		}
+		#colorpicker {
+			width: 54px;
+			height: 54px;
+			border-radius: 50px;
+			opacity: 0;
+
+		}
+
+
 	</style>
 
 
@@ -285,26 +326,6 @@
 				});
 			}
 
-<<<<<<< HEAD
-=======
-			function myEraserInteraction() {
-				var tool = new paper.Tool();
-
-				tool.onMouseDown = function (event) {
-				    var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
-				    if (hit) {
-				    		// Color pallette keeps track of the full history of colors, though we
-				    		// only color in with the most-recent color.
-				        hit.item.fillColor = '#FFFFFF';
-				    }
-				}
-			}
-
-			// if ($("#eraser").hasClass('down')) {
-			// 	myEraserInteraction();
-			// }
->>>>>>> b0755157f7180771bfa52eb96cb28cd2d9bd81c7
-
 			function init(custom){
 				paper.setup(canvas);
 				getColorsCreatePalette();
@@ -318,18 +339,13 @@
 				    } else {
 				    	myGradientInteraction();
 				    }
-<<<<<<< HEAD
-=======
-					myEraserInteraction();
 
-
->>>>>>> b0755157f7180771bfa52eb96cb28cd2d9bd81c7
 				});
 			}
 
 			function ourinit(custom){
 				paper.setup(canvas);
-				
+				//getColorsCreatePalette();
 
 				paper.project.importSVG(mandala.filePath, function(item) {
 					mandala.item = item._children["design-triangles"];
@@ -346,23 +362,53 @@
 				});
 			}
 
+			var lastColor = cp.history[cp.history.length - 1];
+
+
 			$("#clearbutton").click(function() {
 				ourinit(true);
+				$("#eraser").css('background-color','white');
+				$("#fill").css('background-color','white');
+
 			});
 
 			$("#eraser").click(function() {
-				console.log("Haellooooooooooooo");
 				$("#eraser").css('background-color','red');
+				$("#fill").css('background-color','white');
+				lastColor = cp.history[cp.history.length - 1];
 				cp.history.push('#FFFFFF');
 				myCustomInteraction();
-
 			});
 
+			$("#fill").click(function() {
+				$("#eraser").css('background-color','white');
+				$("#fill").css('background-color','red');
+				cp.history.push(lastColor);
+				myCustomInteraction();
+			});
 
+			var newColor = document.getElementById("colorpicker");
+			$("#confirmbutton").click(function() {
+				var theColor = newColor.value;
+				var $swatch = $("<div>").css("background-color", theColor).addClass("swatch");
+				$swatch.click(function(){
+					// add color to the color palette history
+						cp.history.push($(this).css("background-color"));
+				});
+				cp.$container.append($swatch);
+			});
 
-		
+			/*
+			newColor.addEventListener("input", function() {
+				var theColor = newColor.value;
+				var $swatch = $("<div>").css("background-color", theColor).addClass("swatch");
+				$swatch.click(function(){
+					// add color to the color palette history
+						cp.history.push($(this).css("background-color"));
+				});
+				cp.$container.append($swatch);
+			}, false);*/
 
-			
 
 			// Set up the mandala interactivity.
 			init(true);
@@ -409,20 +455,23 @@
 						</div>
 						<div id="fill" class="squarebutton down">
 							<img src='/static/coloring/images/fillicon.png'>
-<<<<<<< HEAD
 						</div>
 						<div id="eraser" class="squarebutton">
 							<img src='/static/coloring/images/erasericon.png'>
 						</div>
 					</div>
-					<div id="color-palette">
-=======
-						</a>
-						<div id="eraser" class="squarebutton">
-							<img src='/static/coloring/images/erasericon.png'>
-							
+					<div id="paletteandadd">
+						<div id="color-palette">
+							<div class="swatch" style="background-color: black"></div>
 						</div>
->>>>>>> b0755157f7180771bfa52eb96cb28cd2d9bd81c7
+						<div id="addarea">
+							<div id="addbutton" class="roundbutton">
+								<input type="color" id="colorpicker" value="#0000ff">
+								add
+							</div>
+							<div id="confirmbutton" class="roundbutton">confirm</div>
+
+						</div>
 					</div>
 				</div>
 
