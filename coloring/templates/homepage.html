@@ -204,18 +204,6 @@
 		#fill img {
 			opacity: 0.4;
 		}
-		#eraser {
-			box-shadow: inset 0 3px 10px rgb(0 0 0 / 0.4);
-			background-color: rgb(73 29 200 / 0.2);
-			border: 2px solid rgb(73 29 200 / 0.4);
-
-		}
-
-		#eraser img {
-			opacity: 0.4;
-		}
-
-		
 
 
 
@@ -296,21 +284,6 @@
 
 				});
 			}
-
-			// $('#eraser').on('click', function(event){
-			// 	var tool = new paper.Tool();
-
-			// 	tool.onMouseDown = function (event) {
-			// 	    var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
-			// 	    if (hit) {
-			// 	    		// Color pallette keeps track of the full history of colors, though we
-			// 	    		// only color in with the most-recent color.
-			// 	        hit.item.fillColor = 'white';
-			// 	    }
-			// 	}
-			// });
-
-			
 
 			// Set up the mandala interactivity.
 			init(true);
