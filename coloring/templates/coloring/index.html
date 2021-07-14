@@ -18,57 +18,6 @@
 		html {
 			height: 100%;
 		}
-		#color-palette {
-			background-color: #f1f1f1;
-			display: flex;
-			flex-wrap: wrap;
-			position: relative;
-			top: 0;
-			/*width: 80%;*/
-		}
-		#addarea {
-			height: 100%;
-			background-color: #f1f1f1;
-			display: flex;
-		}
-		#paletteandadd {
-			display: flex;
-			flex-direction: column;
-			width: 80%;
-		}
-		#addbutton {
-			margin-left: auto;
-			height: 54px;
-			width: 54px;
-			margin-top: auto;
-			margin-bottom: auto;
-		}
-		#confirmbutton {
-			margin-left: 18px;
-			margin-right: 18px;
-			height: 54px;
-			width: 54px;
-			margin-top: auto;
-			margin-bottom: auto;
-		}
-
-
-		.swatch {
-			width: 24px;
-			height: 24px;
-			-moz-border-radius: 12px;
-			-webkit-border-radius: 12px;
-			border-radius: 12px;
-			margin: 3px;
-		}
-
-		#myCanvas {
-			padding-left: 0;
-		    padding-right: 0;
-		    display: block;
-			width: 100%;
-
-		}
 		body {
 			background-color: #EAE5F7;
 			margin: 0;
@@ -97,328 +46,181 @@
 			display: flex;
 			align-items: center;
 			height: 100%;
+			flex-direction: column;
 		}
-		.box {
-			display: flex;
-			width: 95%;
-			margin: auto;
-			height: 88%;
-		}
-		.palettebuttons {
+		.continuearea {
+			height: 100%;
 			width: 100%;
-			margin-left: 3%;
-			justify-content: space-between;
 			display: flex;
 			flex-direction: column;
 		}
-		#topbuttons {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-		}
-		.squarebutton {
-			background-color: white;
-			height: 80px;
-			width: 80px;
-			border-radius: 11px;
-			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-			display: flex;
-		}
-		.roundbutton {
-			background-color: white;
-			height: 80px;
-			width: 80px;
-			border-radius: 40px;
-			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-		}
-		#undoredo {
-			display: flex;
-			flex-direction: row;
-			width: 180px;
-			justify-content: space-between;
-		}
-		#bottombuttons {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-		}
-		#saveshare {
-			display: flex;
-			flex-direction: row;
-			width: 180px;
-			justify-content: space-between;
-		}
-		#undobutton {
-			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-			display: flex;
-			flex-direction: column;
-		}
-		#undobutton img {
-			width: 61%;
-			margin: 0 auto;
-		}
-		#redobutton {
-			box-shadow: inset 0 3px 10px rgb(0 0 0 / 0.4);
-			display: flex;
-			flex-direction: column;
-		}
-		#redobutton img {
-			width: 61%;
-			margin: 0 auto;
-			opacity: 0.2;
-		}
-		#backbutton {
-			display:flex;
-		}
-		#backbutton img {
-			width: 71%;
-			height: 71%;
-			margin: auto;
-		}
-		#clearbutton {
-			background-color: red;
-			display: flex;
-		}
-		#clearbutton h2 {
+		#continuetext {
+			height: 20%;
+			width: 100%;
+			/*background-color: red;*/
 			font-family: 'Pragati Narrow', sans-serif;
 			font-weight: 700;
-			margin: auto;
-			color: white;
-		}
-		.buttontext {
-			font-family: 'Pragati Narrow', sans-serif;
-			margin: -7px auto;
-		}
-		#savebutton {
 			display: flex;
 		}
-		#savebutton img {
-			width: 71%;
-			height: 71%;
-			margin: auto;
-		}
-		#sharebutton {
-			display: flex;
+		#continuetext h1 {
+			margin-top: 14px;
+			margin-bottom: auto;
+			margin-left: 42px;
 		}
 
-		#sharebutton img {
-			width: 71%;
-			height: 71%;
-			margin: auto;
-		}
-
-		#palettetools {
+		#continuepages {
+			height: 100%;
+			width: 100%;
+			/*background-color: blue;*/
 			display: flex;
 			flex-direction: row;
-			height: 50%;
-			justify-content: space-between;
 		}
-
-		#tools {
-			height: 100%;
+		#trianglebubble {
+			display: flex;
+			background-color: #D1C7EE;
+			width: 30%;
+			margin-left: 42px;
+			border-radius: 19px;
+			box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+		}
+		#mandalabubble {
+			display: flex;
+			background-color: #D1C7EE;
+			width: 30%;
+			margin-left: 42px;
+			border-radius: 19px;
+			box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+		}
+		#trianglepreview {
+			width: 46%;
+			height: 83%;
+			margin-top: auto;
+			margin-bottom: auto;
+			margin-left: 20px;
+		}
+		.previewbuttons {
+			width: 50%;
 			display: flex;
 			flex-direction: column;
-			justify-content: space-between;
+			font-family: 'Pragati Narrow', sans-serif;
+			font-weight: 700;
+			color: white;
+			font-size: 108%;
 		}
-		#tools img {
-			width: 60%;
-			height: 60%;
+		.previewbuttons h2 {
+			margin: auto;
+			text-align: center;
+		}
+		#continuebutton {
+			background-color: #7B60CA;
+			height: 20%;
+			width: 65%;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: auto;
+			margin-bottom: 30px;
+			border-radius: 14px;
+			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+			display: flex;
+
+		}
+		#deletebutton {
+			background-color: #D01515;
+			height: 20%;
+			width: 65%;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: auto;
+			border-radius: 14px;
+			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+			display:flex;
+		}
+
+		.newarea {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+		#newtext {
+			height: 20%;
+			width: 100%;
+			font-family: 'Pragati Narrow', sans-serif;
+			font-weight: 700;
+			display: flex;
+		}
+		#newtext h1 {
+			margin-top: 14px;
+			margin-bottom: auto;
+			margin-left: 42px;
+		}
+		#newpages {
+			height: 100%;
+			width: 100%;
+			display: flex;
+		}
+		.newpagesection {
+			display: flex;
+			flex-direction: column;
+			font-family: 'Pragati Narrow', sans-serif;
+			font-weight: 300;
 			margin: auto;
 		}
-		/*
-		#fill {
-			box-shadow: inset 0 3px 10px rgb(0 0 0 / 0.4);
-			background-color: rgb(73 29 200 / 0.2);
-			border: 2px solid rgb(73 29 200 / 0.4);
+		.newpagesection img {
+			width: 230px;
+			height: 230px;
+			box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
 		}
-		#fill img {
-			opacity: 0.4;
+		.newpagesection p {
+			text-align: center;
+			margin: auto;
+			font-size: 21px;
 		}
-		*/
-
-		a.down {
-			box-shadow: inset 0 3px 10px rgb(0 0 0 / 0.4);
-			background-color: rgb(73 29 200 / 0.2);
-			border: 2px solid rgb(73 29 200 / 0.4);
+		.loadarea {
+			height: 20%;
+			width: 100%;
+			display: flex;
 		}
-
-		a.down img {
-			opacity: 0.4;
+		#loadbutton {
+			background-color: rgb(73 29 200 / 0.8);
+			margin: auto;
+			height: 40px;
+			width: 150px;
+			border-radius: 11px;
+			font-family: 'Pragati Narrow', sans-serif;
+			font-weight: 700;
+			color: white;
+			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 		}
-
-		.swatch {
-			width: 54px;
-			height: 54px;
-			border-radius: 30px;
-			margin: 5px;
+		#loadbutton h2 {
+			margin: auto;
+			text-align: center;
 		}
-		#colorpicker {
-			width: 54px;
-			height: 54px;
-			border-radius: 50px;
-			opacity: 0;
-
-		}
-
-
 	</style>
 
 
 	<script type="text/javascript" canvas="canvas">
-
-
 		window.onload = function() {
-			var canvas = document.getElementById('myCanvas');
-
-			// coloring page
-			var mandala = {
-				item: null,
-				lastClicked: null,
-				filePath: '/static/coloring/images/triangles.svg'
-			};
-
-			// color palette
-			var cp = {
-				history: ["#000000"], // black selected by default
-				options: [],
-				$container: $('#color-palette')
-			}
-
-			function myCustomInteraction() {
-				var tool = new paper.Tool();
-
-				tool.onMouseDown = function (event) {
-				    var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
-				    if (hit) {
-				    		// Color pallette keeps track of the full history of colors, though we
-				    		// only color in with the most-recent color.
-				        hit.item.fillColor = cp.history[cp.history.length - 1];
-				    }
-				}
-			}
-
-			// create a color palette with the given colors
-			function createColorPalette(colors){
-
-				// create a swatch for each color
-				for (var i = colors.length - 1; i >= 0; i--) {
-					var $swatch = $("<div>").css("background-color", colors[i])
-									   .addClass("swatch");
-					$swatch.click(function(){
-						// add color to the color palette history
-					  	cp.history.push($(this).css("background-color"));
-					});
-					cp.$container.append($swatch);
-				}
-			}
-
-
-
-			// loads a set of colors from a json to create a color palette
-			function getColorsCreatePalette(){
-				cp.$container.html(" ");
-				$.getJSON('/static/coloring/vendors/material/material-colors.json', function(colors){
-					var keys = Object.keys(colors);
-					for (var i = keys.length - 1; i >= 0; i--) {
-						cp.options.push(colors[keys[i]][500]);
+			var clicked = 0;
+			$("#deletebutton").click(function() {
+ 			 document.getElementById('deletetext').textContent = "Are you sure?";
+		 	});
+			$('html').click(function(e) {
+ 				if(!$(e.target).hasClass('deleteclass')) {
+ 					document.getElementById('deletetext').textContent = "Delete";
+					clicked = 0;
+ 				}
+				else {
+					clicked = clicked + 1;
+					if (clicked == 2) {
+						var triangle = document.getElementById("trianglebubble");
+						triangle.remove();
 					}
-					createColorPalette(cp.options);
-				});
-			}
+				}
+ 		 	});
 
-			function init(custom){
-				paper.setup(canvas);
-				getColorsCreatePalette();
-
-				paper.project.importSVG(mandala.filePath, function(item) {
-					mandala.item = item._children["design-triangles"];
-				    paper.project.insertLayer(0,mandala.item);
-
-				    if (custom) {
-				    	myCustomInteraction();
-				    } else {
-				    	myGradientInteraction();
-				    }
-
-				});
-			}
-
-			function ourinit(custom){
-				paper.setup(canvas);
-				//getColorsCreatePalette();
-
-				paper.project.importSVG(mandala.filePath, function(item) {
-					mandala.item = item._children["design-triangles"];
-				    paper.project.insertLayer(0,mandala.item);
-
-				    if (custom) {
-				    	myCustomInteraction();
-				    } else {
-				    	myGradientInteraction();
-				    }
-					myEraserInteraction();
-
-
-				});
-			}
-
-			var lastColor = cp.history[cp.history.length - 1];
-
-
-			$("#clearbutton").click(function() {
-				ourinit(true);
-				$("#eraser").css('background-color','white');
-				$("#fill").css('background-color','white');
-
-			});
-
-			$("#eraser").click(function() {
-				$("#eraser").css('background-color','red');
-				$("#fill").css('background-color','white');
-				lastColor = cp.history[cp.history.length - 1];
-				cp.history.push('#FFFFFF');
-				myCustomInteraction();
-			});
-
-			$("#fill").click(function() {
-				$("#eraser").css('background-color','white');
-				$("#fill").css('background-color','red');
-				cp.history.push(lastColor);
-				myCustomInteraction();
-			});
-
-			var newColor = document.getElementById("colorpicker");
-			$("#confirmbutton").click(function() {
-				var theColor = newColor.value;
-				var $swatch = $("<div>").css("background-color", theColor).addClass("swatch");
-				$swatch.click(function(){
-					// add color to the color palette history
-						cp.history.push($(this).css("background-color"));
-				});
-				cp.$container.append($swatch);
-			});
-
-			/*
-			newColor.addEventListener("input", function() {
-				var theColor = newColor.value;
-				var $swatch = $("<div>").css("background-color", theColor).addClass("swatch");
-				$swatch.click(function(){
-					// add color to the color palette history
-						cp.history.push($(this).css("background-color"));
-				});
-				cp.$container.append($swatch);
-			}, false);*/
-
-
-			// Set up the mandala interactivity.
-			init(true);
 		}
 
-		$(document).ready(function() {
-			$('a.squarebutton').click(function() {
-				$('a.squarebutton').toggleClass("down");
-			});
-		});
 
 	</script>
 
@@ -430,64 +232,65 @@
 		<h1 id= "webname">ez color</h1>
 	</div>
 	<div class='bottom'>
-		<div class='box'>
-			<canvas id="myCanvas" width="750px" height="750px"></canvas>
-			<div class="palettebuttons">
-				<div id="topbuttons">
-					<div id="undoredo">
-						<div id="undobutton" class="squarebutton">
-							<img src='/static/coloring/images/undoicon.png'>
-							<h2 class="buttontext">Undo</h2>
+		<div class='continuearea'>
+			<div id='continuetext'>
+				<h1>Continue where you left off...</h1>
+			</div>
+			<div id='continuepages'>
+				<div id='trianglebubble'>
+					<img id= "trianglepreview" src='/static/coloring/images/trianglepreview.png'>
+					<div class= 'previewbuttons'>
+						<div id='continuebutton' onclick="location.href='new_interaction';">
+							<h2>Continue...</h2>
 						</div>
-						<div id="redobutton" class="squarebutton">
-							<img src='/static/coloring/images/redoicon.png'>
-							<h2 class="buttontext" style="opacity:0.2">Redo</h2>
-						</div>
-					</div>
-						<div id="backbutton" class="roundbutton">
-							<img src='/static/coloring/images/backicon.png'>
-						</div>
-				</div>
-				<div id="palettetools">
-					<div id="tools">
-						<div id= "brush" class="squarebutton">
-							<img src='/static/coloring/images/brushicon.png'>
-						</div>
-						<div id="fill" class="squarebutton down">
-							<img src='/static/coloring/images/fillicon.png'>
-						</div>
-						<div id="eraser" class="squarebutton">
-							<img src='/static/coloring/images/erasericon.png'>
-						</div>
-					</div>
-					<div id="paletteandadd">
-						<div id="color-palette">
-							<div class="swatch" style="background-color: black"></div>
-						</div>
-						<div id="addarea">
-							<div id="addbutton" class="roundbutton">
-								<input type="color" id="colorpicker" value="#0000ff">
-								add
-							</div>
-							<div id="confirmbutton" class="roundbutton">confirm</div>
-
+						<div id='deletebutton' class='deleteclass'>
+							<h2 id='deletetext' class='deleteclass'>Delete</h2>
 						</div>
 					</div>
 				</div>
-
-				<div id="bottombuttons">
-					<div id="clearbutton" class="roundbutton">
-						<h2>CLEAR</h2>
-					</div>
-					<div id="saveshare">
-						<div id="savebutton" class="roundbutton">
-							<img src='/static/coloring/images/saveicon.png'>
+				<div id='mandalabubble'>
+					<img id= "trianglepreview" src='/static/coloring/images/continuemandala.png'>
+					<div class= 'previewbuttons'>
+						<div id='continuebutton' onclick="location.href='new_interaction';">
+							<h2>Continue...</h2>
 						</div>
-						<div id="sharebutton" class="roundbutton">
-							<img src='/static/coloring/images/shareicon.png'>
+						<div id='deletebutton'>
+							<h2>Delete</h2>
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class='newarea'>
+			<div id='newtext'>
+				<h1>Choose new coloring page</h1>
+			</div>
+			<div id='newpages'>
+				<div class='newpagesection'>
+					<img src='/static/coloring/images/flowermandala.png'>
+					<p>Flower mandala</p>
+				</div>
+				<div class='newpagesection'>
+					<img src='/static/coloring/images/unicorn.png'>
+					<p>Unicorn</p>
+				</div>
+				<div class='newpagesection'>
+					<img src='/static/coloring/images/coolmandala.png'>
+					<p>Cool mandala</p>
+				</div>
+				<div class='newpagesection'>
+					<img src='/static/coloring/images/mermaidprincess.png'>
+					<p>Mermaid princess</p>
+				</div>
+				<div class='newpagesection'>
+					<img src='/static/coloring/images/minion.png'>
+					<p>Minion</p>
+				</div>
+			</div>
+		</div>
+		<div class='loadarea'>
+			<div id='loadbutton'>
+				<h2>Load More...</h2>
 			</div>
 		</div>
 	</div>

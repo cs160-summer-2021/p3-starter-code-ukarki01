@@ -9,15 +9,69 @@
 	<script type="text/javascript" src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'coloring/vendors/paper/paper-full.min.js' %}"></script>
 
+	<!-- fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Pragati+Narrow:wght@400;700&display=swap" rel="stylesheet">
+
 	<style type="text/css">
+		html {
+			height: 100%;
+		}
 		#color-palette {
-			width: 300px;
-			background-color: #f1f1f1;
 			display: flex;
 			flex-wrap: wrap;
-			position: absolute;
+			position: relative;
 			top: 0;
+			margin-top: 4px;
+			margin-left: 4px;
 		}
+		#addarea {
+			height: 100%;
+			display: flex;
+		}
+		#paletteandadd {
+			display: flex;
+			flex-direction: column;
+			width: 80%;
+			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+			border-radius: 20px;
+			background-color: #f1f1f1;
+		}
+		#addbutton {
+			margin-left: auto;
+			height: 54px;
+			width: 164px;
+			margin-top: auto;
+			margin-bottom: auto;
+			display: flex;
+			font-family: 'Pragati Narrow', sans-serif;
+			font-weight: 700;
+		}
+		#addbutton h3 {
+			margin: 11px 26px;
+			position: absolute;
+			z-index: 0;
+		}
+		#confirmbutton {
+			margin-left: 18px;
+			margin-right: 18px;
+			height: 54px;
+			width: 54px;
+			margin-top: auto;
+			margin-bottom: auto;
+			display:flex;
+
+			box-shadow: inset 0 3px 10px rgb(0 0 0 / 0.4);
+		}
+		#confirmbutton img {
+			width: 31px;
+			height: 26px;
+			margin: auto;
+
+			opacity: 0.4;
+		}
+
 
 		.swatch {
 			width: 24px;
@@ -31,13 +85,193 @@
 		#myCanvas {
 			padding-left: 0;
 		    padding-right: 0;
-		    margin-left: auto;
-		    margin-right: auto;
 		    display: block;
+			width: 100%;
+
 		}
+		body {
+			background-color: #EAE5F7;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
+		.top {
+			width: 100%;
+			height: 70px;
+			background-color: #491DC8;
+			display: flex;
+			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+		}
+		#logo {
+			width: 50px;
+			margin: auto 10px;
+		}
+		#webname {
+			font-family: 'Pragati Narrow', sans-serif;
+			font-weight: 700;
+			color: white;
+			margin: auto 0;
+		}
+		.bottom {
+			display: flex;
+			align-items: center;
+			height: 100%;
+		}
+		.box {
+			display: flex;
+			width: 95%;
+			margin: auto;
+			height: 88%;
+		}
+		.palettebuttons {
+			width: 100%;
+			margin-left: 3%;
+			justify-content: space-between;
+			display: flex;
+			flex-direction: column;
+		}
+		#topbuttons {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		.squarebutton {
+			background-color: white;
+			height: 80px;
+			width: 80px;
+			border-radius: 11px;
+			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+			display: flex;
+		}
+		.roundbutton {
+			background-color: white;
+			height: 80px;
+			width: 80px;
+			border-radius: 40px;
+			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+		}
+		#undoredo {
+			display: flex;
+			flex-direction: row;
+			width: 180px;
+			justify-content: space-between;
+		}
+		#bottombuttons {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		#saveshare {
+			display: flex;
+			flex-direction: row;
+			width: 180px;
+			justify-content: space-between;
+		}
+		#undobutton {
+			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+			display: flex;
+			flex-direction: column;
+		}
+		#undobutton img {
+			width: 61%;
+			margin: 0 auto;
+		}
+		#redobutton {
+			box-shadow: inset 0 3px 10px rgb(0 0 0 / 0.4);
+			display: flex;
+			flex-direction: column;
+		}
+		#redobutton img {
+			width: 61%;
+			margin: 0 auto;
+			opacity: 0.2;
+		}
+		#backbutton {
+			display:flex;
+		}
+		#backbutton img {
+			width: 71%;
+			height: 71%;
+			margin: auto;
+		}
+		#clearbutton {
+			background-color: red;
+			display: flex;
+		}
+		#clearbutton h2 {
+			font-family: 'Pragati Narrow', sans-serif;
+			font-weight: 700;
+			margin: auto;
+			color: white;
+		}
+		.buttontext {
+			font-family: 'Pragati Narrow', sans-serif;
+			margin: -7px auto;
+		}
+		#savebutton {
+			display: flex;
+		}
+		#savebutton img {
+			width: 71%;
+			height: 71%;
+			margin: auto;
+		}
+		#sharebutton {
+			display: flex;
+		}
+
+		#sharebutton img {
+			width: 71%;
+			height: 71%;
+			margin: auto;
+		}
+
+		#palettetools {
+			display: flex;
+			flex-direction: row;
+			height: 50%;
+			justify-content: space-between;
+		}
+
+		#tools {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		#tools img {
+			width: 60%;
+			height: 60%;
+			margin: auto;
+		}
+		.swatch {
+			width: 54px;
+			height: 54px;
+			border-radius: 30px;
+			margin: 5px;
+		}
+		#colorpicker {
+			width: 164px;
+			height: 54px;
+			border-radius: 50px;
+			opacity: 0;
+			z-index: 1;
+		}
+		#fill {
+			box-shadow: inset 0 3px 10px rgb(0 0 0 / 0.4);
+			background-color: rgb(73 29 200 / 0.2);
+		}
+		#fill img {
+			opacity: 0.4;
+		}
+
 	</style>
 
+
 	<script type="text/javascript" canvas="canvas">
+
+
 		window.onload = function() {
 			var canvas = document.getElementById('myCanvas');
 
@@ -83,6 +317,8 @@
 				}
 			}
 
+
+
 			// loads a set of colors from a json to create a color palette
 			function getColorsCreatePalette(){
 				cp.$container.html(" ");
@@ -112,14 +348,172 @@
 				});
 			}
 
+			function ourinit(custom){
+				paper.setup(canvas);
+				//getColorsCreatePalette();
+
+				paper.project.importSVG(mandala.filePath, function(item) {
+					mandala.item = item._children["design-triangles"];
+				    paper.project.insertLayer(0,mandala.item);
+
+				    if (custom) {
+				    	myCustomInteraction();
+				    } else {
+				    	myGradientInteraction();
+				    }
+					myEraserInteraction();
+
+
+				});
+			}
+
+			var lastColor = cp.history[cp.history.length - 1];
+
+
+			$("#clearbutton").click(function() {
+				ourinit(true);
+
+				$("#fill").css('box-shadow','inset 0 3px 10px rgb(0 0 0 / 0.4)');
+				$("#fill").css('background-color','rgb(73 29 200 / 0.2)');
+				$("#fillimg").css('opacity','0.4');
+
+
+				$("#eraser").css('background-color','white');
+				$("#eraser").css('box-shadow','0 3px 10px rgb(0 0 0 / 0.2)');
+				$("#eraserimg").css('opacity','1.0');
+			});
+
+			$("#eraser").click(function() {
+
+				$("#eraser").css('box-shadow','inset 0 3px 10px rgb(0 0 0 / 0.4)');
+				$("#eraser").css('background-color','rgb(73 29 200 / 0.2)');
+				$("#eraserimg").css('opacity','0.4');
+
+
+				$("#fill").css('background-color','white');
+				$("#fill").css('box-shadow','0 3px 10px rgb(0 0 0 / 0.2)');
+				$("#fillimg").css('opacity','1.0');
+
+				lastColor = cp.history[cp.history.length - 1];
+				cp.history.push('#FFFFFF');
+				myCustomInteraction();
+			});
+
+			$("#fill").click(function() {
+
+				$("#fill").css('box-shadow','inset 0 3px 10px rgb(0 0 0 / 0.4)');
+				$("#fill").css('background-color','rgb(73 29 200 / 0.2)');
+				$("#fillimg").css('opacity','0.4');
+
+
+				$("#eraser").css('background-color','white');
+				$("#eraser").css('box-shadow','0 3px 10px rgb(0 0 0 / 0.2)');
+				$("#eraserimg").css('opacity','1.0');
+
+				cp.history.push(lastColor);
+				myCustomInteraction();
+			});
+
+			var newColor = document.getElementById("colorpicker");
+			$("#colorpicker").click(function() {
+				$("#confirmbutton").css('box-shadow','0 3px 10px rgb(0 0 0 / 0.2)');
+				$("#checkmark").css('opacity','1.0');
+			});
+			$("#confirmbutton").click(function() {
+				$("#confirmbutton").css('box-shadow','inset 0 3px 10px rgb(0 0 0 / 0.4)');
+				$("#checkmark").css('opacity','0.4');
+
+				var theColor = newColor.value;
+				var $swatch = $("<div>").css("background-color", theColor).addClass("swatch");
+				$swatch.click(function(){
+					// add color to the color palette history
+						cp.history.push($(this).css("background-color"));
+				});
+				cp.$container.append($swatch);
+			});
+
 			// Set up the mandala interactivity.
 			init(true);
 		}
+
+		$(document).ready(function() {
+			$('a.squarebutton').click(function() {
+				$('a.squarebutton').toggleClass("down");
+			});
+		});
+
 	</script>
+
+
 </head>
 <body>
+	<div class='top'>
+		<img id= "logo" src='/static/coloring/images/ezcolor_logo.png' onclick="location.href='index';">
+		<h1 id= "webname" onclick="location.href='index';">ez color</h1>
+	</div>
+	<div class='bottom'>
+		<div class='box'>
+			<canvas id="myCanvas" width="750px" height="750px"></canvas>
+			<div class="palettebuttons">
+				<div id="topbuttons">
+					<div id="undoredo">
+						<div id="undobutton" class="squarebutton">
+							<img src='/static/coloring/images/undoicon.png'>
+							<h2 class="buttontext">Undo</h2>
+						</div>
+						<div id="redobutton" class="squarebutton">
+							<img src='/static/coloring/images/redoicon.png'>
+							<h2 class="buttontext" style="opacity:0.2">Redo</h2>
+						</div>
+					</div>
+						<div id="backbutton" class="roundbutton" onclick="location.href='index';">
+							<img src='/static/coloring/images/backicon.png'>
+						</div>
+				</div>
+				<div id="palettetools">
+					<div id="tools">
+						<div id= "brush" class="squarebutton">
+							<img src='/static/coloring/images/brushicon.png'>
+						</div>
+						<div id="fill" class="squarebutton down">
+							<img id="fillimg" src='/static/coloring/images/fillicon.png'>
+						</div>
+						<div id="eraser" class="squarebutton">
+							<img id="eraserimg" src='/static/coloring/images/erasericon.png'>
+						</div>
+					</div>
+					<div id="paletteandadd">
+						<div id="color-palette">
+							<div class="swatch" style="background-color: black"></div>
+						</div>
+						<div id="addarea">
+							<div id="addbutton" class="roundbutton">
+								<input type="color" id="colorpicker" value="#0000ff">
+								<h3>Select New Color</h3>
+							</div>
+							<div id="confirmbutton" class="roundbutton">
+								<img id="checkmark" src='/static/coloring/images/checkicon.png'>
+							</div>
 
-	<canvas id="myCanvas" width="750px" height="750px"></canvas>
-	<div id="color-palette"></div>
+						</div>
+					</div>
+				</div>
+
+				<div id="bottombuttons">
+					<div id="clearbutton" class="roundbutton">
+						<h2>CLEAR</h2>
+					</div>
+					<div id="saveshare">
+						<div id="savebutton" class="roundbutton">
+							<img src='/static/coloring/images/saveicon.png'>
+						</div>
+						<div id="sharebutton" class="roundbutton">
+							<img src='/static/coloring/images/shareicon.png'>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
